@@ -4,11 +4,11 @@ metadata:
   name: hello-content
   namespace: default
 data:
-  version: "v1"
+  version: "v2"
   # ↓ ここを書き換えて push すると、全edgeデバイスに同じ内容が配られる
   index.html: |
     <html><body style="font-family:sans-serif;text-align:center;padding-top:80px">
       <h1>Hello from Fleet</h1>
-      <h2>deploy version: v1</h2>
-      <p>pattern1: same content to ALL edges</p>
+      <h2>deploy version: v2</h2>
+      <p>pattern1: !!!!!!!!!!!!!!!!!!</p>
     </body></html>
