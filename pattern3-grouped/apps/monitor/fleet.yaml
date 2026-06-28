@@ -1,0 +1,7 @@
+# monitor: tier=stable のedgeデバイス群にだけ配る（カナリアedgeデバイスには配らない例）
+defaultNamespace: edge-apps
+targets:
+  - name: stable-only
+    clusterSelector:
+      matchLabels:
+        tier: stable

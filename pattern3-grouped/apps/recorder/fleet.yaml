@@ -1,0 +1,7 @@
+# recorder: すべてのedgeデバイス(edge=true)に配る常駐アプリ
+defaultNamespace: edge-apps
+targets:
+  - name: all-edges
+    clusterSelector:
+      matchLabels:
+        edge: "true"

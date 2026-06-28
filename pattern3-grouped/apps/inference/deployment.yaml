@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: inference
+  namespace: edge-apps
+spec:
+  replicas: 1
+  selector:
+    matchLabels: { app: inference }
+  template:
+    metadata:
+      labels: { app: inference }
+    spec:
+      containers:
+        - name: inference
+          image: nginx:1.27       # 実際はYOLO等の推論コンテナに置換
+          imagePullPolicy: IfNotPresent

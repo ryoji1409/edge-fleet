@@ -1,0 +1,7 @@
+# inference: role=inference のラベルを持つedgeデバイス(例: Jetson)にだけ配る
+defaultNamespace: edge-apps
+targets:
+  - name: inference-nodes
+    clusterSelector:
+      matchLabels:
+        role: inference

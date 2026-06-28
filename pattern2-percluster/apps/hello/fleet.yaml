@@ -1,0 +1,22 @@
+# pattern2: 同一リポジトリからedgeデバイスごとに違う内容を配る（targetCustomizations + overlays）
+# base(apps/hello直下) を全ターゲットに適用しつつ、
+# node=edge01 / node=edge02 のラベルを持つクラスタには overlays/ の内容を上書きする。
+defaultNamespace: default
+
+targetCustomizations:
+  - name: edge01
+    clusterSelector:
+      matchLabels:
+        node: edge01
+    yaml:
+      overlays:
+        - edge01            # overlays/edge01 を上書き適用
+  - name: edge02
+    clusterSelector:
+      matchLabels:
+        node: edge02
+    yaml:
+      overlays:
+        - edge02            # overlays/edge02 を上書き適用
+
+# overlays ディレクトリ自体は base スキャン対象から除外する
